@@ -52,7 +52,7 @@ The current project scope is intentionally narrow and realistic:
 - around 10 lab members
 - internal instruments only
 - an existing chemical inventory table as a starting data source
-- a target outcome of demo + benchmark + paper + open-source starter repo
+- a target outcome of demo + benchmark + open-source starter repo
 - an orientation toward lab operations, not a general chatbot
 
 ## System components
@@ -95,19 +95,43 @@ ChemClaw-Lab/
 ├── CONTRIBUTING.md
 ├── DEVELOPMENT_LOG.md
 ├── agents/
+├── assets/
 ├── benchmark/
+├── demo_data/
 ├── docs/
-├── paper/
-└── slides/
+├── scripts/
+├── src/
+└── tests/
 ```
 
 ### Key folders
 
-- `docs/` - system overview, architecture, schema, roadmap, benchmark framing, and open-source notes
+- `docs/` - system overview, architecture, schema, roadmap, deployment notes, and project guidance
 - `agents/` - role specifications for the orchestrator and specialist agents
 - `benchmark/` - benchmark task descriptions and annotation guidance
-- `paper/` - paper outline and early writing draft
-- `slides/` - one-page pitch material and figure prompt notes
+- `src/` - the minimal runnable prototype package
+- `demo_data/` - seed data for the local prototype
+- `assets/` - images used in repository presentation
+
+## Runtime and deployment recommendation
+
+ChemClaw-Lab is best understood as an **agent-oriented prototype built around an assistant runtime**, not just as a standalone Python package.
+
+The author recommends using **OpenClaw** as the default deployment foundation, or another agent assistant framework with similar capabilities.
+
+Why this matters:
+
+- the project logic assumes messaging-native interaction
+- the architecture expects orchestration across specialist agents
+- local deployment becomes much easier when the runtime already supports messaging, tools, session context, and workflow automation
+
+If you want to deploy or extend this project locally, it is strongly recommended that you:
+
+1. install OpenClaw first, or choose a comparable agent assistant runtime
+2. let that assistant help read this repository and explain the architecture
+3. use the assistant to guide local setup and iterative implementation
+
+For a more explicit deployment note, see [`docs/deployment_guidance.md`](docs/deployment_guidance.md).
 
 ## Start here
 
@@ -123,6 +147,7 @@ Then use these supporting files:
 
 - [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the current English summary
 - [`PROJECT_STATUS_CN.md`](PROJECT_STATUS_CN.md) for the Chinese summary
+- [`docs/deployment_guidance.md`](docs/deployment_guidance.md) for runtime and local deployment recommendations
 - [`docs/next_steps.md`](docs/next_steps.md) for immediate implementation priorities
 - [`docs/repository_structure.md`](docs/repository_structure.md) for repo organization notes
 
@@ -138,8 +163,8 @@ Already drafted:
 - database schema draft
 - benchmark design draft
 - specialist agent prompt drafts
-- paper structure and early writing draft
-- one-page pitch material
+- benchmark and implementation-facing design materials
+- early runnable prototype components
 
 This is intentionally a docs-first repository at this stage.
 
@@ -193,7 +218,7 @@ Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) first.
 
 ## Citation and reuse
 
-If you reuse the ideas, structure, or benchmark framing from this repository in academic or open-source work, please cite or acknowledge the project once a formal paper or release citation is available.
+If you reuse the ideas, structure, or benchmark framing from this repository in academic or open-source work, please cite or acknowledge the project once a formal release citation is available.
 
 ## License
 

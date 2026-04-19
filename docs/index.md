@@ -14,6 +14,7 @@ This page is a quick navigator for the main repository documents.
 
 - [Open-Source Strategy](open_source_strategy.md)
 - [Repository Structure](repository_structure.md)
+- [Deployment Guidance](deployment_guidance.md)
 - [Next Steps](next_steps.md)
 
 ## Recommended reading path
@@ -23,3 +24,7 @@ This page is a quick navigator for the main repository documents.
 3. Read **Schema** to understand the event-first data model.
 4. Read **Benchmark** for the evaluation framing.
 5. Read **Roadmap** and **Next Steps** for implementation priorities.
+
+## Recommended deployment mindset
+
+This repository is easier to understand and deploy when read with the help of an AI agent assistant. The recommended default is OpenClaw, though similar agent runtimes can also work.
