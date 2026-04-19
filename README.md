@@ -131,7 +131,7 @@ If you want to deploy or extend this project locally, it is strongly recommended
 2. let that assistant help read this repository and explain the architecture
 3. use the assistant to guide local setup and iterative implementation
 
-For a more explicit deployment note, see [`docs/deployment_guidance.md`](docs/deployment_guidance.md).
+For more explicit deployment notes, see [`docs/deployment_guidance.md`](docs/deployment_guidance.md) and [`docs/openclaw_setup.md`](docs/openclaw_setup.md).
 
 ## Start here
 
@@ -148,6 +148,7 @@ Then use these supporting files:
 - [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the current English summary
 - [`PROJECT_STATUS_CN.md`](PROJECT_STATUS_CN.md) for the Chinese summary
 - [`docs/deployment_guidance.md`](docs/deployment_guidance.md) for runtime and local deployment recommendations
+- [`docs/openclaw_setup.md`](docs/openclaw_setup.md) for an OpenClaw-first onboarding path
 - [`docs/next_steps.md`](docs/next_steps.md) for immediate implementation priorities
 - [`docs/repository_structure.md`](docs/repository_structure.md) for repo organization notes
 
@@ -184,7 +185,7 @@ The recommended way to explore or deploy this project is:
 
 1. install **OpenClaw** first, or prepare another comparable agent assistant runtime
 2. clone this repository locally
-3. ask your assistant to read `README.md`, `docs/index.md`, and `docs/deployment_guidance.md`
+3. ask your assistant to read `README.md`, `docs/index.md`, `docs/deployment_guidance.md`, and `docs/openclaw_setup.md`
 4. let the assistant guide you through the local prototype and implementation roadmap
 
 This is the preferred path because ChemClaw-Lab is designed as an agent-oriented prototype, not only as a standalone code package.

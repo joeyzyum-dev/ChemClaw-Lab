@@ -15,6 +15,7 @@ This page is a quick navigator for the main repository documents.
 - [Open-Source Strategy](open_source_strategy.md)
 - [Repository Structure](repository_structure.md)
 - [Deployment Guidance](deployment_guidance.md)
+- [OpenClaw Setup Guide](openclaw_setup.md)
 - [Next Steps](next_steps.md)
 
 ## Recommended reading path
