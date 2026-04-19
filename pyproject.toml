@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chemclaw-lab"
+version = "0.1.0"
+description = "Minimal prototype for a messaging-native chemistry lab operations assistant"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Joey" }
+]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+chemclaw = "chemclaw_lab.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

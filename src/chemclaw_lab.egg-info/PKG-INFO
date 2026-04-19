@@ -1,3 +1,14 @@
+Metadata-Version: 2.4
+Name: chemclaw-lab
+Version: 0.1.0
+Summary: Minimal prototype for a messaging-native chemistry lab operations assistant
+Author: Joey
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
 # ChemClaw-Lab
 
 [![Status](https://img.shields.io/badge/status-research%20starter-blue)](#project-status)
@@ -160,10 +171,6 @@ chemclaw seed-demo
 chemclaw status
 chemclaw list-chemicals
 chemclaw list-bookings
-
-# optional: run tests
-pip install -r requirements-dev.txt
-pytest -q
 ```
 
 ## Suggested next implementation steps

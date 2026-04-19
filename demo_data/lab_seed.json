@@ -1,0 +1,32 @@
+{
+  "users": [
+    {"user_id": "user_001", "name": "Joey", "role": "PI"},
+    {"user_id": "user_002", "name": "Lin", "role": "PhD student"},
+    {"user_id": "user_003", "name": "Chen", "role": "Master student"}
+  ],
+  "projects": [
+    {"project_id": "proj_001", "name": "Zn-Br Electrolyte Optimization", "description": "Small-lab demo project for electrolyte formulation and cycling tests."},
+    {"project_id": "proj_002", "name": "Porous Carbon Adsorbent Screening", "description": "Tracking synthesis, characterization, and adsorption experiments."}
+  ],
+  "chemicals": [
+    {"chemical_id": "chem_001", "name": "ZnBr2", "formula": "ZnBr2", "location": "Cabinet A2", "amount": 250.0, "unit": "g", "threshold": 50.0},
+    {"chemical_id": "chem_002", "name": "KBr", "formula": "KBr", "location": "Cabinet A3", "amount": 42.0, "unit": "g", "threshold": 50.0},
+    {"chemical_id": "chem_003", "name": "TBABr3", "formula": "TBABr3", "location": "Cold Room Shelf 1", "amount": 18.0, "unit": "g", "threshold": 10.0}
+  ],
+  "instruments": [
+    {"instrument_id": "inst_001", "name": "Electrochemical Workstation", "status": "available", "location": "Room 302"},
+    {"instrument_id": "inst_002", "name": "Tube Furnace", "status": "available", "location": "Room 105"}
+  ],
+  "bookings": [
+    {"booking_id": "book_001", "instrument_id": "inst_001", "user_id": "user_002", "project_id": "proj_001", "start_time": "2026-04-20T08:00:00+08:00", "end_time": "2026-04-20T10:00:00+08:00", "status": "confirmed"},
+    {"booking_id": "book_002", "instrument_id": "inst_002", "user_id": "user_003", "project_id": "proj_002", "start_time": "2026-04-20T14:00:00+08:00", "end_time": "2026-04-20T16:00:00+08:00", "status": "confirmed"}
+  ],
+  "inventory_transactions": [
+    {"transaction_id": "txn_001", "chemical_id": "chem_001", "user_id": "user_002", "project_id": "proj_001", "transaction_type": "use", "amount_delta": -15.0, "unit": "g", "raw_text": "Used 15 g ZnBr2 for electrolyte prep."},
+    {"transaction_id": "txn_002", "chemical_id": "chem_002", "user_id": "user_003", "project_id": "proj_002", "transaction_type": "use", "amount_delta": -8.0, "unit": "g", "raw_text": "Used 8 g KBr for adsorption batch."}
+  ],
+  "experiment_events": [
+    {"event_id": "evt_001", "project_id": "proj_001", "user_id": "user_002", "event_type": "electrochem_test", "title": "Zn-Br cycling test prepared", "details": "Electrolyte prepared and cell assembled for tomorrow morning run.", "source_text": "Cell prep done, ready for cycling test tomorrow."},
+    {"event_id": "evt_002", "project_id": "proj_002", "user_id": "user_003", "event_type": "observation", "title": "Carbon sample darkened after heating", "details": "Powder changed from brown to dark brown after 140 C for 2 h.", "source_text": "After heating at 140C for 2h, the powder turned much darker."}
+  ]
+}
