@@ -1,67 +1,23 @@
 # ChemClaw-Lab
 
-**ChemClaw-Lab** is a messaging-native, multi-agent assistant framework for chemistry laboratory operations.
+[![Status](https://img.shields.io/badge/status-research%20starter-blue)](#project-status)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Docs First](https://img.shields.io/badge/repo-docs--first-orange)](#repository-map)
 
-It is designed for small academic chemistry labs where daily work is fragmented across chat apps, spreadsheets, screenshots, and informal notes. The project aims to turn those fragmented inputs into structured, traceable, and actionable laboratory memory for:
+ChemClaw-Lab is a messaging-native, event-centric, multi-agent framework for chemistry laboratory operations.
+
+It is designed for small academic chemistry labs where daily work is fragmented across chat apps, spreadsheets, screenshots, and informal notes. The goal is to turn those fragmented inputs into structured, traceable, and actionable lab memory for:
 
 - inventory and consumable management
 - experiment memory construction
 - planning and internal instrument booking
 
-The long-term goal is to make ChemClaw-Lab both:
+The long-term aim is to make ChemClaw-Lab both:
 
-1. a research project suitable for paper submission, and
-2. a reusable open-source framework for AI-assisted laboratory operations.
+1. a credible research project suitable for paper submission
+2. a reusable open-source starter framework for AI-assisted lab operations
 
----
-
-## Core idea
-
-Instead of forcing researchers to leave WeChat, WhatsApp, or similar tools, ChemClaw-Lab starts from the communication channels they already use.
-
-Raw messages, images, and files are first converted into **structured events**, then used to update operational state, generate summaries, or coordinate bookings.
-
-This gives the system four key properties:
-
-- **messaging-native**
-- **multi-agent**
-- **event-centric**
-- **traceable**
-
----
-
-## Current project scope
-
-ChemClaw-Lab currently focuses on a small chemistry lab setting:
-
-- ~10 lab members
-- internal instruments only
-- existing chemical inventory table available
-- target outcome: paper demo + benchmark + open-source starter framework
-- orientation: research assistant for lab operations, not a general chatbot
-
----
-
-## Main components
-
-### Orchestrator
-Routes user requests, decomposes mixed tasks, and coordinates specialist agents.
-
-### Agent A: Chemical & Consumable Manager
-Handles item lookup, stock queries, inventory updates, and restocking suggestions.
-
-### Agent B: Experiment Memory Manager
-Turns fragmented notes, photos, and screenshots into structured experiment memory and PI-facing summaries.
-
-### Agent C: Planning & Booking Manager
-Checks dependencies, plans short-horizon tasks, and coordinates internal instrument booking.
-
-### Audit / Confirmation Layer
-Prevents risky or uncertain writes from being silently applied.
-
----
-
-## Why this project matters
+## Why this project exists
 
 Small academic labs often struggle with:
 
@@ -70,42 +26,144 @@ Small academic labs often struggle with:
 - weak visibility for PI supervision
 - disconnected planning, inventory, and scheduling workflows
 
-ChemClaw-Lab treats these as a single systems problem rather than isolated tasks.
+ChemClaw-Lab treats these as one operational systems problem instead of several isolated nuisances.
 
----
+## Core idea
 
-## Repository guide
+Instead of forcing researchers to leave WeChat, WhatsApp, or similar communication tools, ChemClaw-Lab starts from the channels they already use.
 
-- `docs/` - architecture, schema, benchmark, roadmap, and project notes
-- `agents/` - specialist agent prompt specifications
+Raw messages, images, and files are first converted into **structured events**, then used to update operational state, generate summaries, or coordinate bookings.
+
+This gives the system four defining properties:
+
+- **messaging-native**
+- **multi-agent**
+- **event-centric**
+- **traceable**
+
+## What ChemClaw-Lab covers
+
+The current project scope is intentionally narrow and realistic:
+
+- around 10 lab members
+- internal instruments only
+- an existing chemical inventory table as a starting data source
+- a target outcome of demo + benchmark + paper + open-source starter repo
+- an orientation toward lab operations, not a general chatbot
+
+## System components
+
+### Orchestrator
+Routes requests, decomposes mixed tasks, and coordinates specialist agents.
+
+### Agent A, Chemical & Consumable Manager
+Handles stock lookup, location lookup, inventory updates, and restocking suggestions.
+
+### Agent B, Experiment Memory Manager
+Turns fragmented notes, photos, and screenshots into structured experiment memory and PI-facing summaries.
+
+### Agent C, Planning & Booking Manager
+Checks dependencies, drafts short-horizon plans, and coordinates internal instrument booking.
+
+### Audit / Confirmation Layer
+Prevents risky or uncertain writes from being silently applied.
+
+## Event-first workflow
+
+```text
+raw message
+  -> specialist parsing
+  -> structured event
+  -> audit / confirmation
+  -> state update or summary / planning output
+```
+
+This design helps preserve evidence, reduce unsupported writes, and make the system benchmarkable.
+
+## Repository map
+
+```text
+ChemClaw-Lab/
+├── README.md
+├── LICENSE
+├── PROJECT_STATUS.md
+├── PROJECT_STATUS_CN.md
+├── CONTRIBUTING.md
+├── DEVELOPMENT_LOG.md
+├── agents/
+├── benchmark/
+├── docs/
+├── paper/
+└── slides/
+```
+
+### Key folders
+
+- `docs/` - system overview, architecture, schema, roadmap, benchmark framing, and open-source notes
+- `agents/` - role specifications for the orchestrator and specialist agents
 - `benchmark/` - benchmark task descriptions and annotation guidance
-- `paper/` - paper outline and writing drafts
-- `slides/` - one-page pitch material and figure prompts
+- `paper/` - paper outline and early writing draft
+- `slides/` - one-page pitch material and figure prompt notes
 
----
+## Start here
+
+If you are opening the repository for the first time, read in this order:
+
+1. [`docs/system_overview.md`](docs/system_overview.md)
+2. [`docs/architecture.md`](docs/architecture.md)
+3. [`docs/schema.md`](docs/schema.md)
+4. [`docs/benchmark.md`](docs/benchmark.md)
+5. [`docs/roadmap.md`](docs/roadmap.md)
+
+Then use these supporting files:
+
+- [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the current English summary
+- [`PROJECT_STATUS_CN.md`](PROJECT_STATUS_CN.md) for the Chinese summary
+- [`docs/next_steps.md`](docs/next_steps.md) for immediate implementation priorities
+- [`docs/repository_structure.md`](docs/repository_structure.md) for repo organization notes
+
+## Project status
+
+This repository is currently in the **research design and repository bootstrapping phase**.
+
+Already drafted:
+
+- project positioning
+- multi-agent architecture
+- event-centric operational representation
+- database schema draft
+- benchmark design draft
+- specialist agent prompt drafts
+- paper structure and early writing draft
+- one-page pitch material
+
+This is intentionally a docs-first repository at this stage.
 
 ## Suggested next implementation steps
 
 1. create a synthetic lab environment
-2. implement the event schema and SQLite backend
-3. connect a basic messaging interface
-4. prototype Agent A/B/C with schema-constrained outputs
-5. build ChemLabOps-Bench v1
-6. run baseline experiments
-7. write the first paper draft
+2. expand the event schema into executable JSON schemas
+3. implement a minimal SQLite backend
+4. prototype message-to-event conversion for the main workflows
+5. add benchmark examples and evaluation scripts
+6. build minimal end-to-end demo cases
 
----
+## Contributing
 
-## Status
+Contributions are welcome, especially around:
 
-This repository starter was generated from an extended design conversation and already includes:
+- markdown and documentation cleanup
+- schema refinement
+- synthetic benchmark examples
+- evaluation design
+- minimal prototype code
 
-- system concept
-- architecture
-- schema draft
-- benchmark draft
-- agent prompt drafts
-- paper outline
-- interview one-pager notes
+Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) first.
 
-It is intentionally documentation-heavy at this stage.
+## Citation and reuse
+
+If you reuse the ideas, structure, or benchmark framing from this repository in academic or open-source work, please cite or acknowledge the project once a formal paper or release citation is available.
+
+## License
+
+This project is released under the [MIT License](LICENSE).
