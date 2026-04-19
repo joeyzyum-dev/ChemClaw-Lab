@@ -17,6 +17,10 @@ The long-term aim is to make ChemClaw-Lab both:
 1. a credible research project suitable for paper submission
 2. a reusable open-source starter framework for AI-assisted lab operations
 
+![ChemClaw-Lab concept overview](assets/chemclaw-overview.png)
+
+*Concept illustration for ChemClaw-Lab, showing the messaging-native, multi-agent, event-centric lab operations workflow.*
+
 ## Why this project exists
 
 Small academic labs often struggle with:
