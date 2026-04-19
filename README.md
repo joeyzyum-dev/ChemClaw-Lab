@@ -178,7 +178,20 @@ This repository now includes a first runnable prototype layer:
 - a small CLI for initializing, seeding, and inspecting demo data
 - a smoke test in `tests/test_cli_smoke.py`
 
-### Quick start
+### Recommended setup path, OpenClaw-first
+
+The recommended way to explore or deploy this project is:
+
+1. install **OpenClaw** first, or prepare another comparable agent assistant runtime
+2. clone this repository locally
+3. ask your assistant to read `README.md`, `docs/index.md`, and `docs/deployment_guidance.md`
+4. let the assistant guide you through the local prototype and implementation roadmap
+
+This is the preferred path because ChemClaw-Lab is designed as an agent-oriented prototype, not only as a standalone code package.
+
+### Local prototype quick start, standalone fallback
+
+If you only want to run the current local prototype without the larger runtime context, you can still do that:
 
 ```bash
 python3 -m venv .venv
